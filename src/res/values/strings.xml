@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">MusicQuiz</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Enter Code</string>
+    <string name="dummy_content">Please sign In wih the teacher code to start the test.</string>
 
 </resources>
