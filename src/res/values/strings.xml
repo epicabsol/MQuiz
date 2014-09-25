@@ -3,6 +3,6 @@
 
     <string name="app_name">MusicQuiz</string>
     <string name="dummy_button">Enter Code</string>
-    <string name="dummy_content">Please sign In wih the teacher code to start the test.</string>
+    <string name="dummy_content">tap here and sign In wih the teacher code to start the test.</string>
 
 </resources>
