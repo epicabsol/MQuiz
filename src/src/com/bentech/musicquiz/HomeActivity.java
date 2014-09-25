@@ -50,7 +50,7 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_home);
+        setContentView(com.bentech.musicquiz.R.layout.activity_home);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
@@ -89,11 +89,12 @@ public class HomeActivity extends Activity {
                             // controls.
                             controlsView.setVisibility(visible ? View.VISIBLE : View.GONE);
                         }
-
+                        /*
                         if (visible && AUTO_HIDE) {
                             // Schedule a hide().
                             delayedHide(AUTO_HIDE_DELAY_MILLIS);
                         }
+                        */
                     }
                 });
 
