@@ -114,8 +114,9 @@ public class HomeActivity extends Activity {
         //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
     
-    private void ContinueButtonClicked()
+    public void ContinueButton(View v)
     {
+		//return v;
     	
     }
 
@@ -127,7 +128,7 @@ public class HomeActivity extends Activity {
         // created, to briefly hint to the user that UI controls
         // are available.
         
-        //NO.     WHY WOULD YOU HIDE THE UI!?!?!?!?!?!
+        //NO.     Hiding the UI makes the text go crazy glitchy.
         //delayedHide(100);
     }
 
