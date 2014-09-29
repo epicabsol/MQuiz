@@ -1,7 +1,12 @@
 package com.bentech.musicquiz;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -85,5 +90,36 @@ public class PasswordActivity extends Activity {
 		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
 		bar.setProgress(CodeLength);
 		v.invalidate();
+	}
+	
+	private boolean TestCode()
+	{
+		try
+		{
+			URL url = new URL("http://epicabsol.us.to:5041/auth-" + Code);
+			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			String result = "";
+			
+			while (null != (result += br.readLine() + "\n")) {
+				//System.out.println(strTemp);
+			}
+			if (result == "good")
+			{
+				Log.d("ServerResult", "Good!!!!!");
+			}
+			else if (result == "bad")
+			{
+				Log.d("ServerResult", "BAD!!!!");
+			}
+			else
+			{
+				Log.d("ServerResult", result);
+			}
+			return true;
+		}
+		catch (Exception ex)
+		{
+			return false;
+		}
 	}
 }
