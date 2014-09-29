@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,9 @@ public class PasswordActivity extends Activity {
 		{
 			Code = Code.substring(0, CodeLength);
 		}
+		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+		bar.setProgress(CodeLength);
+		v.invalidate();
 	}
 	
 	public void Key0(View v)
@@ -100,9 +104,7 @@ public class PasswordActivity extends Activity {
 			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 			String result = "";
 			
-			while (null != (result += br.readLine() + "\n")) {
-				//System.out.println(strTemp);
-			}
+			result = br.readLine();
 			if (result == "good")
 			{
 				Log.d("ServerResult", "Good!!!!!");
@@ -120,6 +122,18 @@ public class PasswordActivity extends Activity {
 		catch (Exception ex)
 		{
 			return false;
+		}
+	}
+	public void SubmitCode(View v)
+	{
+		if (TestCode())
+		{
+			Intent HomeIntent = new Intent(this, HomeActivity.class);
+	    	startActivity(HomeIntent);
+		}
+		else
+		{
+			BackPassword(v);
 		}
 	}
 }
