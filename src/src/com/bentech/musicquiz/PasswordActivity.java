@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import com.github.kevinsawicki.http.*;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
