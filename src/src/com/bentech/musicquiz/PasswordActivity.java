@@ -1,7 +1,15 @@
 package com.bentech.musicquiz;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+import com.github.kevinsawicki.http.*;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -22,6 +30,9 @@ public class PasswordActivity extends Activity {
 		{
 			Code = Code.substring(0, CodeLength);
 		}
+		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+		bar.setProgress(CodeLength);
+		v.invalidate();
 	}
 	
 	public void Key0(View v)
@@ -85,5 +96,46 @@ public class PasswordActivity extends Activity {
 		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
 		bar.setProgress(CodeLength);
 		v.invalidate();
+	}
+	
+	private boolean TestCode()
+	{
+		try
+		{
+			URL url = new URL("http://epicabsol.us.to:5041/auth-" + Code);
+			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			String result = "";
+			
+			result = br.readLine();
+			if (result == "good")
+			{
+				Log.d("ServerResult", "Good!!!!!");
+			}
+			else if (result == "bad")
+			{
+				Log.d("ServerResult", "BAD!!!!");
+			}
+			else
+			{
+				Log.d("ServerResult", result);
+			}
+			return true;
+		}
+		catch (Exception ex)
+		{
+			return false;
+		}
+	}
+	public void SubmitCode(View v)
+	{
+		if (TestCode())
+		{
+			Intent HomeIntent = new Intent(this, HomeActivity.class);
+	    	startActivity(HomeIntent);
+		}
+		else
+		{
+			BackPassword(v);
+		}
 	}
 }

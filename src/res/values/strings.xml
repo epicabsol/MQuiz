@@ -8,5 +8,6 @@
     <string name="title_activity_password">PasswordActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="pwd_enterteachercode">Enter Teacher Code</string>
+    <string name="cmdSubmitPasswordText">Continue</string>
 
 </resources>
