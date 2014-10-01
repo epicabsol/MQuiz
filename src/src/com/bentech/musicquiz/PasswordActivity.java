@@ -23,9 +23,9 @@ public class PasswordActivity extends Activity {
 	
 	public void BackPassword(View v)
 	{
-		CodeLength -= 1;
 		if (CodeLength > 0)
 		{
+		CodeLength -= 1;
 			Code = Code.substring(0, CodeLength);
 		}
 	}
