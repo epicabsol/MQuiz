@@ -13,5 +13,8 @@
 hs_err_pid*
 
 #Auto-generted files
-R.txt
-src/gen/
+src/bin/R.txt
+src/gen/*
+src/bin/classes.dex
+src/bin/MusicQuiz.apk
+R.java
