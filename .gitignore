@@ -18,3 +18,6 @@ src/gen/*
 src/bin/classes.dex
 src/bin/MusicQuiz.apk
 R.java
+src/jarlist.cache
+*.cache
+*.ap_
