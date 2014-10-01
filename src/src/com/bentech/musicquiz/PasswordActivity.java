@@ -30,52 +30,53 @@ public class PasswordActivity extends Activity {
 		}
 	}
 	
-	public void Key0(View v)
+	public void KeyZero(View v)
 	{
 		addKey("0", v);
 	}
 	
-	public void Key1(View v)
+	public void KeyOne(View v)
 	{
+		Log.d("Keypad", "Made it to key one!");
 		addKey("1", v);
 	}
 	
-	public void Key2(View v)
+	public void KeyTwo(View v)
 	{
 		addKey("2", v);
 	}
 	
-	public void Key3(View v)
+	public void KeyThree(View v)
 	{
 		addKey("3", v);
 	}
 	
-	public void Key4(View v)
+	public void KeyFour(View v)
 	{
 		addKey("4", v);
 	}
 	
-	public void Key5(View v)
+	public void KeyFive(View v)
 	{
 		addKey("5", v);
 	}
 	
-	public void Key6(View v)
+	public void KeySix(View v)
 	{
 		addKey("6", v);
 	}
 	
-	public void Key7(View v)
+	public void KeySeven(View v)
 	{
 		addKey("7", v);
 	}
 	
-	public void Key8(View v)
+	public void KeyEight(View v)
 	{
 		addKey("8", v);
 	}
 	
-	public void Key9(View v)
+	public void KeyNine(View v)
 	{
 		addKey("9", v);
 	}
@@ -87,10 +88,13 @@ public class PasswordActivity extends Activity {
 			Code = Code + key;
 			CodeLength += 1;
 		}
-		
+		Log.d("Keypad", "Adding key " + key);
 		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+		Log.d("Keypad", "Found progress bar!");
+		Log.d("Keypad", "Progress bar max = " + bar.getMax() + ", min = " + bar.getProgress());
 		bar.setProgress(CodeLength);
-		v.invalidate();
+		Log.d("Keypad", "Set progress bar value.");
+		//v.postInvalidateDelayed(0,0,)
 		Log.d("ServerResult", "The new buffer is " + Code);
 	}
 	
