@@ -236,7 +236,6 @@ int drawable abc_textfield_searchview_holo_light 0x7f020054
 int drawable abc_textfield_searchview_right_holo_dark 0x7f020055
 int drawable abc_textfield_searchview_right_holo_light 0x7f020056
 int drawable ic_launcher 0x7f020057
-int id Button01 0x7f05004b
 int id action_bar 0x7f05001c
 int id action_bar_activity_content 0x7f050015
 int id action_bar_container 0x7f05001b
@@ -263,6 +262,7 @@ int id cmdNumber6 0x7f050043
 int id cmdNumber7 0x7f050044
 int id cmdNumber8 0x7f050045
 int id cmdNumber9 0x7f050046
+int id cmdValidateCode 0x7f05004b
 int id collapseActionView 0x7f05000d
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e

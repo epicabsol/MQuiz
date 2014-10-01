@@ -125,7 +125,10 @@ public class PasswordActivity extends Activity {
 	}
 	public void ValidateButton(View v)
 	{
-		if (TestCode() == true)
+		Log.d("ServerResult", "Validate Button Clicked!!!!!");
+		
+		boolean good = TestCode();
+		if (good == true)
 		{
 			Intent NextIntent = new Intent(this, HomeActivity.class);
 	    	startActivity(NextIntent);
@@ -138,5 +141,6 @@ public class PasswordActivity extends Activity {
 			bar.setProgress(CodeLength);
 			v.invalidate();
 		}
+		
 	}
 }
