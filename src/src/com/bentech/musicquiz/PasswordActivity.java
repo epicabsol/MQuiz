@@ -91,6 +91,7 @@ public class PasswordActivity extends Activity {
 		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
 		bar.setProgress(CodeLength);
 		v.invalidate();
+		Log.d("ServerResult", "The new buffer is " + Code);
 	}
 	
 	private boolean TestCode()
