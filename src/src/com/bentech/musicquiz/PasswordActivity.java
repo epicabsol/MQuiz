@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -120,6 +121,22 @@ public class PasswordActivity extends Activity {
 		catch (Exception ex)
 		{
 			return false;
+		}
+	}
+	public void ValidateButton(View v)
+	{
+		if (TestCode() == true)
+		{
+			Intent NextIntent = new Intent(this, HomeActivity.class);
+	    	startActivity(NextIntent);
+		}
+		else
+		{
+			CodeLength = 0;
+			Code = "";
+			ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+			bar.setProgress(CodeLength);
+			v.invalidate();
 		}
 	}
 }
