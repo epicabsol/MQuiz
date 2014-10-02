@@ -37,16 +37,20 @@ public class MServer {
 	static class AuthCodeTask extends AsyncTask<String, Void, Boolean>
 	{
 		
-		protected Boolean doInBackground(String... params) {
+		protected Boolean doInBackground(String... Code) {
 			try
 			{
-				String response = HttpRequest.get("").body();
-				if (response == "good")
+				String request = "http://epicabsol.us.to:5041/auth-" + Code[0];
+				String response = HttpRequest.get(request).body();
+				Log.d("ServerResponse", "Sent Request: " + request + "|AuthCode Response: " + response);
+				if (response.contains("good"))
 				{
+					Log.d("ServerResponse", "Response was good.");
 					return true;
 				}
 				else
 				{
+					Log.d("ServerResponse", "Response was, \"" + response + "\".");
 					return false;
 				}
 			}
