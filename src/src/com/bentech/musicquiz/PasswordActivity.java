@@ -1,6 +1,7 @@
 package com.bentech.musicquiz;
 
 import java.io.BufferedReader;
+import com.github.kevinsawicki.http.HttpRequest;
 import java.io.InputStreamReader;
 import java.net.URL;
 
@@ -25,8 +26,11 @@ public class PasswordActivity extends Activity {
 	{
 		if (CodeLength > 0)
 		{
-		CodeLength -= 1;
+			CodeLength -= 1;
 			Code = Code.substring(0, CodeLength);
+			ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+			bar.setProgress(CodeLength);
+			Log.e("ServerResult", "The new buffer is " + Code);
 		}
 	}
 	
@@ -88,23 +92,29 @@ public class PasswordActivity extends Activity {
 			CodeLength += 1;
 		}
 		
-		ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
 		bar.setProgress(CodeLength);
-		v.invalidate();
-		Log.d("ServerResult", "The new buffer is " + Code);
+		Log.e("ServerResult", "The new buffer is " + Code);
 	}
 	
+	/*
 	private boolean TestCode()
 	{
+		Log.d("ServerResult",  "Starting auth check...");
 		try
 		{
+			Log.d("ServerResult", "bla");
 			URL url = new URL("http://epicabsol.us.to:5041/auth-" + Code);
-			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			Log.d("ServerResult", "bla2");
+			HttpRequest request = new HttpRequest(url, "GET");
 			String result = "";
-			
-			while (null != (result += br.readLine() + "\n")) {
+			Log.d("ServerResult", "bla3");
+			result = request.body();
+			Log.d("ServerResult", "SERVER SAID " + result);
+			//Log.d("ServerResult", "44");
+			//while (null != (result += br.readLine() + "\n")) {
 				//System.out.println(strTemp);
-			}
+			//}
 			if (result == "good")
 			{
 				Log.d("ServerResult", "Good!!!!!");
@@ -121,26 +131,34 @@ public class PasswordActivity extends Activity {
 		}
 		catch (Exception ex)
 		{
+			//Log.e("ServerResult", ex.getMessage());
 			return false;
 		}
 	}
+	*/
 	public void ValidateButton(View v)
 	{
 		Log.d("ServerResult", "Validate Button Clicked!!!!!");
 		
-		boolean good = TestCode();
+		boolean good = MServer.ValidateCode(Code);
+		//boolean good = true;
+		Log.d("ServerResult", "Made it through the validation!!! good = " + good);
 		if (good == true)
 		{
 			Intent NextIntent = new Intent(this, HomeActivity.class);
-	    	startActivity(NextIntent);
+	    	finish();
+			startActivity(NextIntent);
 		}
 		else
 		{
+			
 			CodeLength = 0;
 			Code = "";
-			ProgressBar bar = (ProgressBar) v.findViewById(R.id.progressBar1);
+			Log.d("keypad", "" + v.getClass());
+			ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+			Log.d("keypad", " isNull=" + (bar == null));
 			bar.setProgress(CodeLength);
-			v.invalidate();
+			//this.invalidate();
 		}
 		
 	}

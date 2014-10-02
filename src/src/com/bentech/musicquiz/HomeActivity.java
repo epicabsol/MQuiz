@@ -119,6 +119,7 @@ public class HomeActivity extends Activity {
     {
 		//return v;
     	Intent passwordIntent = new Intent(this, PasswordActivity.class);
+    	finish();
     	startActivity(passwordIntent);
     }
 
