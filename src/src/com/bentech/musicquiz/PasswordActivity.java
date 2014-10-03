@@ -28,7 +28,7 @@ public class PasswordActivity extends Activity {
 		{
 			CodeLength -= 1;
 			Code = Code.substring(0, CodeLength);
-			ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+			ProgressBar bar = (ProgressBar) findViewById(R.id.CodeProgress);
 			bar.setProgress(CodeLength);
 			Log.e("ServerResult", "The new buffer is " + Code);
 		}
@@ -92,7 +92,7 @@ public class PasswordActivity extends Activity {
 			CodeLength += 1;
 		}
 		
-		ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+		ProgressBar bar = (ProgressBar) findViewById(R.id.CodeProgress);
 		bar.setProgress(CodeLength);
 		Log.e("ServerResult", "The new buffer is " + Code);
 	}
@@ -155,7 +155,7 @@ public class PasswordActivity extends Activity {
 			CodeLength = 0;
 			Code = "";
 			Log.d("keypad", "" + v.getClass());
-			ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar1);
+			ProgressBar bar = (ProgressBar) findViewById(R.id.CodeProgress);
 			Log.d("keypad", " isNull=" + (bar == null));
 			bar.setProgress(CodeLength);
 			//this.invalidate();
