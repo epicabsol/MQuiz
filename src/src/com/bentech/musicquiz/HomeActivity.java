@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 
 
 /**
@@ -118,9 +119,18 @@ public class HomeActivity extends Activity {
     public void ContinueButton(View v)
     {
 		//return v;
-    	Intent passwordIntent = new Intent(this, PasswordActivity.class);
-    	finish();
-    	startActivity(passwordIntent);
+    	EditText txtPassword = (EditText) this.findViewById(R.id.txtTeachercode);
+    	String Code = txtPassword.getText().toString();
+    	if (MServer.ValidateCode(Code))
+    	{
+    		txtPassword.setText("");
+    		Intent SetupIntent = new Intent(this, SetupActivity.class);
+    		startActivity(SetupIntent);
+    	}
+    	else
+    	{
+    		txtPassword.setText("");
+    	}
     }
 
     @Override

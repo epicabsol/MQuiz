@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,27 +11,20 @@
          TextureView, etc.
     -->
 
-    <FrameLayout
+    <Button
+        android:id="@+id/cmdEnterSetup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="false"
-        android:fitsSystemWindows="true"
-        android:longClickable="false" >
-
-        <Button
-            android:id="@+id/cmdNumber3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:onClick="ContinueButton"
-            android:text="Enter Code" />
-
-    </FrameLayout>
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:minHeight="75dp"
+        android:onClick="ContinueButton"
+        android:text="@string/cmdEnterSetup"
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
-        android:layout_height="282dp"
+        android:layout_height="125dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginTop="65dp"
@@ -47,6 +40,18 @@
          android:fitsSystemWindows.
     -->
 
+    <EditText
+        android:id="@+id/txtTeachercode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fullscreen_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textSize="25sp" >
 
+        <requestFocus />
+    </EditText>
 
-</FrameLayout>
+</RelativeLayout>

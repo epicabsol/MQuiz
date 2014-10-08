@@ -6,8 +6,10 @@
 
     <uses-sdk
         android:minSdkVersion="17"
-        android:targetSdkVersion="19" />
-	<uses-permission android:name="android.permission.INTERNET"/>
+        android:targetSdkVersion="20" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,8 +26,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PasswordActivity"
-            android:label="@string/title_activity_password" >
+            android:name=".SetupActivity"
+            android:label="@string/title_activity_setup"
+            android:parentActivityName=".HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bentech.musicquiz.HomeActivity" />
         </activity>
     </application>
 

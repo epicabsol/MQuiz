@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MusicQuiz</string>
+    <string name="app_name">Music Quiz</string>
     <string name="dummy_button">Enter Code</string>
-    <string name="dummy_content">tap here and sign In wih the teacher code to start the test.</string>
     <string name="waitscreen_message">Enter teacher code to begin.</string>
     <string name="title_activity_password">PasswordActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="pwd_enterteachercode">Enter Teacher Code</string>
+    <string name="title_activity_setup">Set Up Quiz</string>
+    <string name="action_settings">Settings</string>
+    <string name="lblPracticeTime">Time for practicing</string>
+    <string name="lblPrimeQuiz">Prime Quiz</string>
+    <string name="lblRecordingTime">Time for recording</string>
+    <string name="cmdEnterSetup">Set Up Quiz</string>
 
 </resources>
