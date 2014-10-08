@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import com.github.kevinsawicki.http.HttpRequest;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,16 +26,21 @@ public class MServer {
 	    protected Bitmap doInBackground(String... ImageName) 
 	    {
 	    	Log.e("ServerResponse", "1");
-	        try 
+	    	//HttpRequest.get(path)
+	    	Bitmap result;
+	        String url = ServerURL + "/img/" + ImageName[0];
+	    	try 
 	        {
-	        	Log.d("ServerResponse", "2");
-	        	Bitmap result;
-	        	Log.d("ServerResponse", "3");
-	        	String path = ServerURL + "/img/" + ImageName[0];
-	        	InputStream instream = HttpRequest.get(path).stream();
-	        	Log.d("ServerResponse", "4|" + instream.available() + "|" + path);
-	        	result = BitmapFactory.decodeStream(instream);
-	        	Log.d("ServerResponse", "5");
+	        	HttpClient client = new DefaultHttpClient();
+	        	HttpGet request = new HttpGet(url);
+	        	HttpResponse response;
+	        	response = (HttpResponse)client.execute(request);
+	        	HttpEntity entity = response.getEntity();
+	        	BufferedHttpEntity bufferedEntity = new BufferedHttpEntity(entity);
+	        	InputStream inputStream = bufferedEntity.getContent();
+	        	Log.e("ServerResponse", "Response to request \"" + url + "\" and recieved " + inputStream.available() + " bytes");
+	        	result = BitmapFactory.decodeStream(inputStream);
+	        	
 	        	return result;
 	        } 
 	        catch (Exception e) 

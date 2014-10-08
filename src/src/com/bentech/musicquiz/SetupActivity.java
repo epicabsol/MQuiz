@@ -27,7 +27,7 @@ public class SetupActivity extends Activity {
 		ImageView g  = (ImageView) findViewById(R.id.imageView1);
 		List<String> ImageNames = MServer.GetImageList();
 		//Bitmap b = MServer.GetImage(ImageNames.get(ImageIndex));
-		Bitmap b = MServer.GetImage("Music");
+		Bitmap b = MServer.GetImage(ImageNames.get(0));
 		if (b == null)
 		{
 			Log.e("ServerResponse", "Test Image was null!!!");
