@@ -68,8 +68,6 @@ public class SetupActivity extends Activity {
 		ImageIndex = i;
 		try
 		{
-				
-	
 			ImageView g  = (ImageView) findViewById(R.id.imageView1);
 			List<String> ImageNames = MServer.GetImageList();
 			ImageCount = ImageNames.size();
@@ -78,6 +76,7 @@ public class SetupActivity extends Activity {
 			{
 				g.setImageBitmap(b);
 			}
+			setPageText("Page " + i + " of " + ImageCount + "");
 		}	
 		catch (Exception ex)
 		{
