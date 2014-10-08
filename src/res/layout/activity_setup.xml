@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:onClick="PreviousImage"
+        android:onClick="PreviousClicked"
         android:text="@string/cmdPreviousImage" />
 
     <Button
@@ -92,7 +92,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/imageView1"
-        android:onClick="NextImage"
+        android:onClick="NextClicked"
         android:text="@string/cmdNextImage" />
 
     <TextView

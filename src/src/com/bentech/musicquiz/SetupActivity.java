@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,6 +62,16 @@ public class SetupActivity extends Activity {
 		{
 			SetImage(ImageIndex - 1);
 		}
+	}
+	
+	public void NextClicked(View v)
+	{
+		NextImage();
+	}
+	
+	public void PreviousClicked(View v)
+	{
+		PreviousImage();
 	}
 	
 	public void SetImage(int i)
