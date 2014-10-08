@@ -72,8 +72,37 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/button1"
         android:layout_marginBottom="150dp"
-        android:layout_marginTop="75dp" />
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="PreviousImage"
+        android:text="@string/cmdPreviousImage" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:onClick="NextImage"
+        android:text="@string/cmdNextImage" />
+
+    <TextView
+        android:id="@+id/lblCurrentPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Button01"
+        android:layout_alignBottom="@+id/Button01"
+        android:layout_centerHorizontal="true"
+        android:text="Current Page"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

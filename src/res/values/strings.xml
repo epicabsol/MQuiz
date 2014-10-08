@@ -13,5 +13,7 @@
     <string name="lblPrimeQuiz">Prime Quiz</string>
     <string name="lblRecordingTime">Time for recording</string>
     <string name="cmdEnterSetup">Set Up Quiz</string>
+    <string name="cmdPreviousImage">Previous Image</string>
+    <string name="cmdNextImage">Next Image</string>
 
 </resources>
