@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/cmdStartQuiz"
+        android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="52dp"
         android:layout_toRightOf="@+id/textView1"
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText1"
         android:layout_alignBottom="@+id/editText1"
-        android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="false"
         android:text="@string/lblPracticeTime"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -72,6 +73,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="150dp" />
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="75dp" />
 
 </RelativeLayout>
